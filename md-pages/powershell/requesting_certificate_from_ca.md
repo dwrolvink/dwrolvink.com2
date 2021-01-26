@@ -1,4 +1,4 @@
-```ps
+```powershell
 # Find all available Certificate Authorities and their allowed templates
 function Write-SupportedTemplatesPerCA {
     $rootDSE = [System.DirectoryServices.DirectoryEntry]'LDAP://RootDSE'
