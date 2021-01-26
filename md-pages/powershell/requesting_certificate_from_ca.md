@@ -24,8 +24,11 @@ $hostname = ($env:COMPUTERNAME).ToLower()
 $domain_suffix = 'contoso.com'
 $fqdn = "$hostname.$domain_suffix"
 
-# Request Certificate
+# Request Certificate from template
 $cert = Get-Certificate -Template "YourTemplateName" -SubjectName "CN=$fqdn" -DnsName $fqdn, $hostname -CertStoreLocation Cert:\LocalMachine\My
+
+# If you don't use a CA, just make a self-signed certificate
+#$cert = New-SelfSignedCertificate -Subject "CN=$fqdn" -DnsName $fqdn, $hostname -CertStoreLocation Cert:\LocalMachine\My 
 
 # Setup WinRM HTTPS Listener
 winrm create winrm/config/Listener?Address=*+Transport=HTTPS "@{Hostname=`"$fqdn`"; CertificateThumbprint=`"$($cert.Thumbprint)`"}"
