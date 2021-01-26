@@ -1,5 +1,8 @@
 # Lookups
-Find all available Certificate Authorities and their allowed templates
+In certmgr.msc, you'll only find the certificate templates that you have access to.
+The names listed are also not identical to the names that you have to use. (Mostly missing spaces causing this).
+
+To find all available Certificate Authorities and their allowed templates, do:
 
 ```powershell
 function Write-SupportedTemplatesPerCA {
@@ -14,6 +17,8 @@ function Write-SupportedTemplatesPerCA {
         }
     }
 }
+
+Write-SupportedTemplatesPerCA
 ```
 
 # Setup WinRM HTTPS Listener
