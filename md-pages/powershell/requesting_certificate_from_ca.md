@@ -19,7 +19,7 @@ netsh advfirewall firewall add rule name="Windows Remote Management (HTTPS-In)" 
 
 Note that when you use this solution, you will need to disable the certificate check whenever you connect via https, because there is no chain of authority linking back to the connecting client.
 
-In a domain-joined environment, you might thus instead want to use a certification that is signed by your PKI server (CA). 
+In a domain-joined environment, you might thus instead want to use a certificate that is signed by your PKI server (CA). 
 In this article we'll just assume this is all configured, and the CA can be found from the host on which we want to setup WinRM.
 
 ## Lookup available CA and its templates
