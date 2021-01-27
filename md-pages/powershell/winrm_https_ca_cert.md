@@ -22,6 +22,9 @@ Note that when you use this solution, you will need to disable the certificate c
 In a domain-joined environment, you might thus instead want to use a certificate that is signed by your PKI server (CA). 
 In this article we'll just assume this is all configured, and the CA can be found from the host on which we want to setup WinRM.
 
+Here is a blog post that covers setting up certificate templates: [WinRM SSL Certificate Deployment via GPO](https://www.darkoperator.com/blog/2015/3/24/bdvjiiw1ybzfdjulc5pprgpkm8os0b).
+
+
 ## Lookup available CA and its templates
 In certmgr.msc, you'll only find the certificate templates that you have access to.
 The names listed are also not identical to the names that you have to use. (Mostly missing spaces causing this).
